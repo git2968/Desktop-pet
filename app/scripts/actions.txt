@@ -1,0 +1,24 @@
+﻿=== huohuo ===
+  motions [7]: haoqi, keshui, linghun, qizi, Scene1, yaotou, zhentou
+  expressions [6]: angry, baozhen, cry, qizi1, qizi2, white eyes
+=== IceGirl ===
+  motions [2]: DaiJi, MeiYan
+  expressions [20]: ←歪嘴, 惊讶, 手柄, 披发, 星星眼, 歪嘴→, 流泪, 爱心眼, 猫耳, 王冠, 生气, 疑惑, 白眼, 直播套装, 翅膀, 脸红, 脸黑, 舌头, 金钱眼, 马尾
+=== mikumiku ===
+  motions [1]: Standby
+  expressions [8]: clothes-1, Down-canineteeth, dress, fan-hand, fan-open, Heart-eye, Tear, Up-canineteeth
+=== sumire ===
+  motions [0]: 
+  expressions [0]: 
+=== ulvm2_0001 ===
+  motions [0]: 
+  expressions [35]: angry, angry2, blush, cat_mouth, costume_v0000, costume_v0052, costume_v0100, costume_v0101, cry, fx_10_yellowline, fx_11_star, fx_12_zzz, fx_13_angry, fx_1_heart, fx_2_pale2, fx_3_note, fx_4_sweat, fx_5_sweat_2, fx_6_surprised, fx_7_question, fx_8_exclamation, fx_9_swirl, gonyogonyo, highlight_onoff, jitome, kukkoro, oo, pale, perori, sleep, smile, surprised, wink_L, wink_R, XD
+=== Xiaobai Ao Maid ===
+  motions [1]: idle
+  expressions [0]: 
+=== 小师妹 ===
+  motions [0]: 
+  expressions [1]: 星星
+=== 魔女 ===
+  motions [1]: Scene1
+  expressions [12]: cw, fz, h, hdj, ku, mz, sq, x, xx, yj, zs1, zs2

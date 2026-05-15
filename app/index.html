@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PIXI 默认用 new Function() 编 shader,需要 'unsafe-eval';自用 app 接受。
+         若以后想去掉,用 `import '@pixi/unsafe-eval'` 替代方案。 -->
+    <!-- worker-src 允许 blob: 是 vosk-browser 必需 — 它把 WASM worker 打成 blob URL 动态加载。
+         script-src 同时加 blob: 允许 worker 内部 importScripts(blob:xxx) 继续加载自身代码。 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' pet:; script-src 'self' 'unsafe-eval' blob:; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: pet:; connect-src 'self' pet: ws: wss: https: blob: data:; font-src 'self' data:;" />
+    <title>Desktop Pet</title>
+  </head>
+  <body>
+    <!-- Cubism Core 必须在 PIXI/Live2D 初始化前同步加载,所以放 head/body 顶部均可,这里同步加载 -->
+    <script src="/live2dcubismcore.min.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

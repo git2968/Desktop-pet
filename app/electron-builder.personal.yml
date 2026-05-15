@@ -1,0 +1,61 @@
+# 自用打包配置 — 单机 Windows,免签名
+appId: com.local.desktop-pet
+productName: DesktopPet
+copyright: ''
+asar: true
+directories:
+  output: dist-app
+  buildResources: build
+
+# 打包结果里这些文件会进入 app.asar
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - electron/builtin-skills/**/*
+  - package.json
+  - '!**/*.map'
+  - '!**/*.ts'
+  - '!**/tsconfig*.json'
+
+# 资产目录:运行期通过 process.resourcesPath 访问
+# 注:cwd 是 app/(electron-builder 在 app/ 内执行)
+extraResources:
+  - from: build
+    to: build
+    filter: ['icon.ico', 'icon.png']
+  # Live2D 角色资源
+  - from: live2d
+    to: live2d
+    filter: ['**/*']
+  # Hatch-Pet(Codex)桌宠资源 — 跟 Live2D 平级。每个子目录一只桌宠,
+  # 内含 pet.json + spritesheet.webp。用户后续也可以在设置面板「导入文件夹」,
+  # 那种导入会落到 userData/hatch-pet/(可写),不进打包。
+  - from: hatch-pet
+    to: hatch-pet
+    filter: ['**/*']
+  # PNG 通知动画素材(说话 / 眨眼待机 等),未来 AI 回答完毕时用于托盘弹出动画
+  - from: notify
+    to: notify
+    filter: ['**/*']
+  # 内置 vosk 小模型(~42MB ZIP) — 供对话框语音输入使用
+  # 大模型(~1.4GB)不打包,用户在设置里选自己下载的 zip 路径
+  - from: VOSK
+    to: VOSK
+    filter: ['**/*.zip']
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.ico
+  artifactName: ${productName}-${version}-${arch}.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: ${productName}
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  createDesktopShortcut: true
+  createStartMenuShortcut: true

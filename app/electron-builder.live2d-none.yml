@@ -1,0 +1,44 @@
+appId: com.local.desktop-pet
+productName: DesktopPet
+copyright: ''
+asar: true
+directories:
+  output: dist-app/live2d-none
+  buildResources: build
+
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - electron/builtin-skills/**/*
+  - package.json
+  - '!**/*.map'
+  - '!**/*.ts'
+  - '!**/tsconfig*.json'
+
+extraResources:
+  - from: build
+    to: build
+    filter: ['icon.ico', 'icon.png']
+  - from: notify
+    to: notify
+    filter: ['**/*']
+  - from: VOSK
+    to: VOSK
+    filter: ['**/*.zip']
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.ico
+  artifactName: ${productName}-${version}-live2d-none-${arch}.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: ${productName}
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  createDesktopShortcut: true
+  createStartMenuShortcut: true

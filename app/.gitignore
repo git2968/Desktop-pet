@@ -1,0 +1,23 @@
+node_modules
+dist
+dist-electron
+release
+.vite
+.cache
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Large/local model assets.
+# Keep the Live2D folder, but do not upload models inside it.
+live2d/*
+!live2d/.gitkeep
+
+# Upload only the allowed built-in hatch-pet examples.
+hatch-pet/*
+!hatch-pet/耄耋/
+!hatch-pet/耄耋/**
+!hatch-pet/万津莫/
+!hatch-pet/万津莫/**
