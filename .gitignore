@@ -13,6 +13,14 @@ app/.env.local
 
 zzz/
 
+# Local agent and generated presentation work.
+.codex/
+__pycache__/
+_tmp_skill_build/
+make_zystream_defense_ppt*.py
+ZYStream-*.pptx
+zystream-defense-*.pptx
+
 # Large/local model assets.
 # Keep the Live2D folder, but do not upload models inside it.
 app/live2d/*
